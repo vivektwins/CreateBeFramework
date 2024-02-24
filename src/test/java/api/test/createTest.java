@@ -3,13 +3,16 @@ package api.test;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 import io.restassured.response.Response;
 import api.endpoints.BaseClass;
 import api.endpoints.params_endpoints;
-import api.payload.User;
+import api.payload.PojoUser;
+import api.payload.dataProvider;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -19,7 +22,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class createTest {
 	
 	Faker faker; 
-	User payload;
+	PojoUser payload;
 	ExtentSparkReporter htmlReporter;
 	ExtentReports extent;
 	ExtentTest test1,test2;
@@ -33,7 +36,7 @@ public class createTest {
 		  extent = new ExtentReports();
 		  extent.attachReporter(htmlReporter);
 //		faker = new Faker();
-		payload = new User();
+		payload = new PojoUser();
 		payload.setname("vivek");
 		payload.setage("25");
 		payload.setsalary("10000");
@@ -72,5 +75,11 @@ public class createTest {
 	  //write results into the file
 	  extent.flush();
 	}
-
+	
+	@Test(dataProvider = "test-data",dataProviderClass = dataProvider.class)
+	public void datapro(String a)
+	{
+		System.out.println(a);
+		System.out.println(a);
+	}
 }

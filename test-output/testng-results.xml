@@ -1,21 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-07T17:58:37 IST" name="Default suite" finished-at="2023-12-07T17:58:41 IST" duration-ms="3824">
+  <suite started-at="2024-02-01T21:28:30 IST" name="Default suite" finished-at="2024-02-01T21:28:35 IST" duration-ms="4268">
     <groups>
     </groups>
-    <test started-at="2023-12-07T17:58:37 IST" name="Default test" finished-at="2023-12-07T17:58:41 IST" duration-ms="3824">
+    <test started-at="2024-02-01T21:28:30 IST" name="Default test" finished-at="2024-02-01T21:28:35 IST" duration-ms="4268">
       <class name="api.test.createTest">
-        <test-method is-config="true" signature="setupdata()[pri:0, instance:api.test.createTest@34f6515b]" started-at="2023-12-07T17:58:37 IST" name="setupdata" finished-at="2023-12-07T17:58:37 IST" duration-ms="148" status="PASS">
+        <test-method is-config="true" signature="setupdata()[pri:0, instance:api.test.createTest@1187c9e8]" started-at="2024-02-01T21:28:30 IST" name="setupdata" finished-at="2024-02-01T21:28:31 IST" duration-ms="120" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupdata -->
-        <test-method signature="test()[pri:0, instance:api.test.createTest@34f6515b]" started-at="2023-12-07T17:58:37 IST" name="test" finished-at="2023-12-07T17:58:41 IST" duration-ms="3599" status="PASS">
+        <test-method signature="datapro(java.lang.String)[pri:0, instance:api.test.createTest@1187c9e8]" started-at="2024-02-01T21:28:31 IST" name="datapro" data-provider="test-data" finished-at="2024-02-01T21:28:31 IST" duration-ms="191" status="FAIL">
+          <exception class="org.testng.internal.reflect.MethodMatcherException">
+            <message>
+              <![CDATA[
+[public void api.test.createTest.datapro(java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: datapro([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}])
+Arguments: [(java.lang.Integer) 10]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
+[public void api.test.createTest.datapro(java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
+Data provider mismatch
+Method: datapro([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}])
+Arguments: [(java.lang.Integer) 10]
+at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:43)
+at org.testng.internal.Parameters.injectParameters(Parameters.java:909)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datapro -->
+        <test-method signature="datapro(java.lang.String)[pri:0, instance:api.test.createTest@1187c9e8]" started-at="2024-02-01T21:28:31 IST" name="datapro" data-provider="test-data" finished-at="2024-02-01T21:28:31 IST" duration-ms="85" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datapro -->
+        <test-method signature="datapro(java.lang.String)[pri:0, instance:api.test.createTest@1187c9e8]" started-at="2024-02-01T21:28:31 IST" name="datapro" data-provider="test-data" finished-at="2024-02-01T21:28:31 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- datapro -->
+        <test-method signature="test()[pri:0, instance:api.test.createTest@1187c9e8]" started-at="2024-02-01T21:28:31 IST" name="test" finished-at="2024-02-01T21:28:35 IST" duration-ms="3907" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:api.test.createTest@34f6515b]" started-at="2023-12-07T17:58:41 IST" name="tearDown" finished-at="2023-12-07T17:58:41 IST" duration-ms="491" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:api.test.createTest@1187c9e8]" started-at="2024-02-01T21:28:35 IST" name="tearDown" finished-at="2024-02-01T21:28:35 IST" duration-ms="337" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

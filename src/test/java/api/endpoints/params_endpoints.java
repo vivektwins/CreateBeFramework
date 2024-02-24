@@ -5,13 +5,13 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
-import api.payload.User;
+import api.payload.PojoUser;
 
 
 
 public class params_endpoints {
 	
-	public static Response createAPI(User data)
+	public static Response createAPI(PojoUser data)
 	{
 		Response response = given().contentType(ContentType.JSON)
 				.accept(ContentType.JSON)

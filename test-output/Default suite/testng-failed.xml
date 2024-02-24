@@ -5,7 +5,7 @@
     <classes>
       <class name="api.test.createTest">
         <methods>
-          <include name="test"/>
+          <include name="datapro"/>
           <include name="setupdata"/>
           <include name="tearDown"/>
         </methods>
