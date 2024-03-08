@@ -1,5 +1,7 @@
 package api.test;
 
+import static io.restassured.RestAssured.given;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -7,6 +9,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
+
+import io.restassured.http.ContentType;
+import io.restassured.http.Header;
 import io.restassured.response.Response;
 import api.endpoints.BaseClass;
 import api.endpoints.params_endpoints;
@@ -17,6 +22,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.beust.jcommander.Parameters;
 
 
 public class createTest {
@@ -82,4 +88,48 @@ public class createTest {
 		System.out.println(a);
 		System.out.println(a);
 	}
+	
+	@Test(groups= {"test","tearDown"})
+	public void group() {
+	}
+	
+	@Test
+	public void header()
+	{
+		String host= "https://reqres.in/";
+
+		
+		String body = "{\n"
+				+ "    \"name\": \"morpheus\",\n"
+				+ "    \"job\": \"leader\"\n"
+				+ "}";
+		Response response1= given().contentType(ContentType.JSON).body(body).when().post(host+"api/users").then()
+				.extract().response();
+		System.out.println(response1.asPrettyString());
+		
+		System.out.println(response1.getSessionId());
+		
+		//Get request header value
+		System.out.println(response1.getHeader("Content-Type") + "-------");
+		
+		//Get request header value
+
+		System.out.println(response1.headers());
+		
+		for(Header r: response1.headers())
+		{
+			System.out.println(r.getName() + "and - " + r.getValue());
+		}
+		
+		Assert.assertEquals(response1.getStatusCode(),201);
+		Assert.assertEquals(response1.jsonPath().getString("name"),"morpheus");
+		System.out.println(response1.jsonPath().getString("name"));
+	}
+	
+	
+//	@Test 
+//	@Parameters({"v","v2"})
+//	public void param(String a, String b	) {
+//	}
+	
 }
