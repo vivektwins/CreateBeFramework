@@ -1,5 +1,10 @@
 package api.test;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import static io.restassured.RestAssured.given;
 
 import org.testng.Assert;
@@ -22,7 +27,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.beust.jcommander.Parameters;
+import org.testng.annotations.Parameters;
 
 
 public class createTest {
@@ -52,13 +57,13 @@ public class createTest {
 		
 	}
 	
-	@Test
+	@Test (groups= {"demo"})
 	public void test()
 	{
 		Response response = params_endpoints.createAPI(payload);
 				response.then().log().all();
 				
-		Assert.assertEquals(response.getStatusCode(),200);
+		AssertJUnit.assertEquals(response.getStatusCode(),200);
 		test1 = extent.createTest("API Hit");
 		test1.log(Status.INFO, "url" + " : " + BaseClass.base_url);
 		test1.log(Status.INFO, "response" + " : " + response.prettyPrint());
@@ -68,20 +73,22 @@ public class createTest {
 		}
 		else
 		{
-			test1.fail("some other status code");
+			Assert.fail("some other status code");
 		}
 		
+		System.out.println("grouping the cases on test method");
 	}
 	
-	@AfterSuite
-	 public void tearDown() {
-	test1.pass("All pass");
-	test1.info("test completed");
-	  
-	  //write results into the file
-	  extent.flush();
-	}
-	
+//	@AfterMethod
+//	@AfterSuite
+//	 public void tearDown() {
+//	test1.pass("All pass");
+//	test1.info("test completed");
+//	  
+//	  //write results into the file
+//	  extent.flush();
+//	}
+//	
 	@Test(dataProvider = "test-data",dataProviderClass = dataProvider.class)
 	public void datapro(String a)
 	{
@@ -89,9 +96,27 @@ public class createTest {
 		System.out.println(a);
 	}
 	
-	@Test(groups= {"test","tearDown"})
+	@Test(groups= {"demo"})
 	public void group() {
+		System.out.println("grouping the cases on group method");
 	}
+	
+	@Test (threadPoolSize = 4, invocationCount = 4, timeOut = 1000) 
+	@Parameters ({"a","b"})
+	public void test_parameter(String a, String b) {
+		System.out.println("The thread ID is "+ Thread.currentThread().getId());
+		if(a.contains("1"))
+		{
+		System.out.println(a);
+		}
+		if(b.contains("2"))
+		{
+		System.out.println(b);
+		}
+		System.out.println(a+b +"-"+"testing parameter");
+	}
+	
+	
 	
 	@Test
 	public void header()
@@ -121,8 +146,8 @@ public class createTest {
 			System.out.println(r.getName() + "and - " + r.getValue());
 		}
 		
-		Assert.assertEquals(response1.getStatusCode(),201);
-		Assert.assertEquals(response1.jsonPath().getString("name"),"morpheus");
+		AssertJUnit.assertEquals(response1.getStatusCode(),201);
+		AssertJUnit.assertEquals(response1.jsonPath().getString("name"),"morpheus");
 		System.out.println(response1.jsonPath().getString("name"));
 	}
 	

@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="api.test.createTest">
+      <class name="api.test.test2">
         <methods>
-          <include name="datapro"/>
-          <include name="setupdata"/>
-          <include name="tearDown"/>
+          <include name="postRequest"/>
+          <include name="getRequest"/>
         </methods>
-      </class> <!-- api.test.createTest -->
+      </class> <!-- api.test.test2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

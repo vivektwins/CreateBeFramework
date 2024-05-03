@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-07T14:47:28 IST" name="Default suite" finished-at="2024-03-07T14:47:34 IST" duration-ms="5892">
+  <suite started-at="2024-04-03T17:20:17 IST" name="Failed suite [Default suite]" finished-at="2024-04-03T17:20:19 IST" duration-ms="2266">
     <groups>
-      <group name="test">
-        <method signature="createTest.group()[pri:0, instance:api.test.createTest@57c03d88]" name="group" class="api.test.createTest"/>
-      </group> <!-- test -->
-      <group name="tearDown">
-        <method signature="createTest.group()[pri:0, instance:api.test.createTest@57c03d88]" name="group" class="api.test.createTest"/>
-      </group> <!-- tearDown -->
     </groups>
-    <test started-at="2024-03-07T14:47:28 IST" name="Default test" finished-at="2024-03-07T14:47:34 IST" duration-ms="5892">
-      <class name="api.test.createTest">
-        <test-method is-config="true" signature="setupdata()[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:28 IST" name="setupdata" finished-at="2024-03-07T14:47:29 IST" duration-ms="142" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupdata -->
-        <test-method signature="datapro(java.lang.String)[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:29 IST" name="datapro" data-provider="test-data" finished-at="2024-03-07T14:47:29 IST" duration-ms="388" status="FAIL">
-          <exception class="org.testng.internal.reflect.MethodMatcherException">
+    <test started-at="2024-04-03T17:20:17 IST" name="Default test(failed)" finished-at="2024-04-03T17:20:19 IST" duration-ms="2266">
+      <class name="api.test.test2">
+        <test-method signature="postRequest()[pri:0, instance:api.test.test2@6e01f9b0]" started-at="2024-04-03T17:20:17 IST" name="postRequest" finished-at="2024-04-03T17:20:19 IST" duration-ms="2027" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[
-[public void api.test.createTest.datapro(java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
-Data provider mismatch
-Method: datapro([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}])
-Arguments: [(java.lang.Integer) 10]]]>
+              <![CDATA[expected [403] but found [201]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
-[public void api.test.createTest.datapro(java.lang.String)] has no parameters defined but was found to be using a data provider (either explicitly specified or inherited from class level annotation).
-Data provider mismatch
-Method: datapro([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}])
-Arguments: [(java.lang.Integer) 10]
-at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:43)
-at org.testng.internal.Parameters.injectParameters(Parameters.java:909)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:34)
+              <![CDATA[java.lang.AssertionError: expected [403] but found [201]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:839)
+at org.testng.Assert.assertEquals(Assert.java:849)
+at api.test.test2.postRequest(test2.java:48)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
@@ -57,49 +50,58 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- datapro -->
-        <test-method signature="datapro(java.lang.String)[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:29 IST" name="datapro" data-provider="test-data" finished-at="2024-03-07T14:47:29 IST" duration-ms="268" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test1]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- postRequest -->
+        <test-method signature="getRequest()[pri:0, instance:api.test.test2@6e01f9b0]" started-at="2024-04-03T17:20:19 IST" name="getRequest" finished-at="2024-04-03T17:20:19 IST" duration-ms="95" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [403] but found [200]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [403] but found [200]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:839)
+at org.testng.Assert.assertEquals(Assert.java:849)
+at api.test.test2.getRequest(test2.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- datapro -->
-        <test-method signature="datapro(java.lang.String)[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:29 IST" name="datapro" data-provider="test-data" finished-at="2024-03-07T14:47:29 IST" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- datapro -->
-        <test-method signature="group()[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:29 IST" name="group" finished-at="2024-03-07T14:47:29 IST" duration-ms="12" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- group -->
-        <test-method signature="header()[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:29 IST" name="header" finished-at="2024-03-07T14:47:33 IST" duration-ms="3696" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- header -->
-        <test-method signature="test()[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:33 IST" name="test" finished-at="2024-03-07T14:47:34 IST" duration-ms="1589" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:api.test.createTest@57c03d88]" started-at="2024-03-07T14:47:34 IST" name="tearDown" finished-at="2024-03-07T14:47:35 IST" duration-ms="329" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- api.test.createTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- getRequest -->
+      </class> <!-- api.test.test2 -->
+    </test> <!-- Default test(failed) -->
+  </suite> <!-- Failed suite [Default suite] -->
 </testng-results>

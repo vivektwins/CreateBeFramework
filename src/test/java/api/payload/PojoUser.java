@@ -25,6 +25,7 @@ public class PojoUser {
 	String emailId;
 	String employee;
 	List<Employee> Employee;
+	String job;
 	
 	
 	public String getname() {
@@ -35,6 +36,17 @@ public class PojoUser {
 	{
 		this.name = name;
 		return name;
+	}
+	
+	public String getjob()
+	{
+		return job;
+	}
+	
+	public String setjob(String job)
+	{
+	  this.job= job;
+	  return job;
 	}
 	public String getsalary() {
 		return salary;

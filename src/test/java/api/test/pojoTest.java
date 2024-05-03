@@ -23,6 +23,8 @@ public class pojoTest {
 		
 		PojoUser u2 = new PojoUser();
 		
+		PojoUser normalPayload = new PojoUser();
+		
 		String payload = "{\n"
 				+ "  \"companyName\": \"QAAutomation\",\n"
 				+ "  \"companyEmailId\": \"qaautomation@org.com\",\n"
@@ -113,11 +115,20 @@ public class pojoTest {
 		p.add(u);
 		
 		
+		normalPayload.setsalary("5000");
+		normalPayload.setjob("leader");
+		
+		Gson gson0 = new Gson();
+		String payload0 = gson0.toJson(normalPayload);
+		System.out.println(payload0);
+		System.out.println(normalPayload.getsalary());
+		
+		
 		Gson gson = new Gson();
 		String payload1 = gson.toJson(p);
 		
 		
-		//System.out.println(gson.toJson(u));
+		System.out.println(gson.toJson(u));
 		System.out.println(payload1);
 		System.out.println(payload);
 		
